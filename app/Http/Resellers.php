@@ -5,6 +5,8 @@ $router->group(['middleware' => ['auth:web_resellers']], function ($router) {
         'uses' => 'ResellersController@index',
         'as' => 'reseller.index',
     ]);
+    
+    
 });
 
 $router->get('entrar', [
