@@ -1,6 +1,6 @@
 @extends('layout.admin.index')
 
-@section('title', 'Sdministrators')
+@section('title', 'Administrators')
 
 @section('content')
 <h1 class="page-header">

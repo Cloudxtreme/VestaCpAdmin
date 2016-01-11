@@ -1,6 +1,6 @@
 @extends('layout.admin.index')
 
-@section('title', 'Servers')
+@section('title', 'Resellers')
 
 @section('content')
 <h1 class="page-header">
@@ -8,7 +8,7 @@
 </h1>
 <ol class="breadcrumb">
     <li><i class="fa fa-dashboard"></i>  <a href="{{ URL::to('/admin') }}">Dashboard</a></li>
-    <li class="active"><i class="fa fa-file"></i> Servers</li>
+    <li class="active"><i class="fa fa-file"></i> @yield('title')</li>
 </ol>
 
 @if (count($errors) > 0)
@@ -21,27 +21,23 @@
 </div>
 @endif
 
-{!!Form::open (array('url'=>'/admin/servers/create', 'class' => 'form-horizontal'))!!}
+{!!Form::open (array('url'=>'/admin/resellers/create', 'class' => 'form-horizontal'))!!}
 
 <fieldset>
-    <legend>Add new server</legend>
+    <legend>Add new reseller</legend>
 
-    @include('admin.servers._form')
+    @include('admin.resellers._form')
 
     <hr>    
     <div class="form-group">
         <label  class="col-lg-2 control-label"></label>
         <div class="col-lg-10">
-            <a href="/servers" class="btn btn-default">Go Back</a>
+            <a href="/admin/resellers" class="btn btn-default">Go Back</a>
             {!! Form::submit('Submit', ['class'=>'btn btn-primary']); !!}
         </div>
     </div>
 
 </fieldset>
-
-
-
-
 
 {!!Form::close()!!}
 @endsection

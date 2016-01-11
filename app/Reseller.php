@@ -6,8 +6,18 @@ use Illuminate\Foundation\Auth\User;
 
 class Reseller extends User
 {
+    protected $guarded = ['id'];
+    
+    static $rules = [
+            'company' => "required",
+            'name' => "required",
+            'email' => "required|unique:resellers",
+            'key' => "required",
+            'password' => "required",
+        ];
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'company','name', 'email','domains','status','key', 'password',
     ];
 
     
