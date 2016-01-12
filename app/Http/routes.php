@@ -28,15 +28,15 @@ Route::get('/', function () {
 
 $router->group(['middleware' => ['web']], function ($router) {
     $router->group(['prefix' => 'admin', 'namespace' => 'Admins'], function ($router) {
-        require app_path('Http/Admins.php');
+        require app_path('Http/Routes/Admins.php');
     });
 
     $router->group(['prefix' => 'reseller', 'namespace' => 'Resellers'], function ($router) {
-        require app_path('Http/Resellers.php');
+        require app_path('Http/Routes/Resellers.php');
     });
     
     $router->group(['prefix' => 'user', 'namespace' => 'Users'], function ($router) {
-        require app_path('Http/Users.php');
+        require app_path('Http/Routes/Users.php');
     });
 });
 

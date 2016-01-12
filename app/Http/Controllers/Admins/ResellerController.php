@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admins;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Reseller;
 
@@ -37,8 +36,7 @@ class ResellerController extends Controller {
 
     public function postCreate(Request $request) {
         $data = $request->all();
-        
-        
+
         $validator = $this->validator->make($data, Reseller::$rules);
         if ($validator->fails()) {
             return redirect('admin/resellers/create')

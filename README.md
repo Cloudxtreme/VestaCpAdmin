@@ -1,6 +1,6 @@
 ## VestaCp and Laravel PHP Framework
 
-This project is aimed at administration of web hosting servers that use VestaCP platform using Laravel Framework 5.2  as administrator panel. We are at an early stage with the creation of the master management levels, reseller and end user.
+This project is aimed at administration of web hosting servers that use VestaCP platform using Laravel Framework 5.2 as administrator panel. We are at an early stage with the creation of the master management levels, reseller and end user.
 
 The idea is that we can create various resale and domain on multiple servers, in case of failure is not affected every field of a certain resale.
 

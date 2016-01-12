@@ -36,7 +36,7 @@
                 <a href="{{ URL::to('/') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
-                <a href="{{ URL::to('users') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Usuários</a>
+                <a href="{{ URL::to('reseller/users') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Users</a>
             </li>
             <li>
                 <a href="{{ URL::to('config') }}"><i class="fa fa-fw fa-desktop"></i> Configurações</a>
