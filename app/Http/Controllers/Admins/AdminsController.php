@@ -3,27 +3,22 @@
 namespace App\Http\Controllers\Admins;
 
 use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
-
 use App\Admin;
 use App\Server;
 
-class AdminsController extends Controller
-{
-    public function home()
-    {
+class AdminsController extends Controller {
+
+    public function home() {
         return view('admin.index');
     }
-    
+
     protected $admin;
     protected $request;
-    protected $validator;
 
-    public function __construct(Admin $admin, Request $request, \Illuminate\Validation\Factory $validator) {
+    public function __construct(Admin $admin, Request $request) {
         $this->admin = $admin;
         $this->request = $request;
-        $this->validator = $validator;
     }
 
     public function getIndex() {
@@ -35,22 +30,22 @@ class AdminsController extends Controller
         }
         return view('admin.administrators.index', compact('admins', 'status'));
     }
-    
+
     public function getCreate() {
         $servers = Server::all();
-        
+
         return view('admin.administrators.create', compact('servers'));
     }
 
     public function postCreate(Request $request) {
         $data = $request->all();
 
-        $validator = $this->validator->make($data, Admin::$rules);
-        if ($validator->fails()) {
-            return redirect('admin/administrators/create')
-                            ->withErrors($validator)
-                            ->withInput();
-        }
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|unique:admins',
+            'id_server' => 'required',
+            'password' => 'required',
+        ]);
 
         $this->admin->create($data)->save();
 
@@ -59,45 +54,39 @@ class AdminsController extends Controller
 
         return redirect('admin/administrators');
     }
- 
-    
-    public function getEdit($id){
+
+    public function getEdit($id) {
         $admin = $this->admin->find($id);
         $servers = Server::all();
-        return view('admin.administrators.edit', compact('admin','servers'));
+        return view('admin.administrators.edit', compact('admin', 'servers'));
     }
-    
-    public function postEdit(Request $request, $id){
+
+    public function postEdit(Request $request, $id) {
         $data = $request->except('_token');
         
-        $rulesEdit = [
-        'name' => "required",
-        'email' => "required|unique:admins,email,$id",
-        'password' => "required",
-    ];
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => "required|unique:admins,email,$id",
+            'id_server' => 'required',
+            'password' => 'required',
+        ]);
         
-        $validator = $this->validator->make($data, $rulesEdit);
-        if ($validator->fails()) {
-            return redirect("admin/administrators/edit/$id")
-                            ->withErrors($validator)
-                            ->withInput();
-        }
-        
-        Admin::where('id', $id)->update($data);
-        
-        $status = "Successfully updated administrator!";
+        $this->admin->where('id', $id)->update($data);
+
+        $status = "Successfully " . $data['name'] . "  updated administrator!";
         $this->request->session()->flash('status', $status);
-                
+
         return redirect('admin/administrators');
     }
-    
+
     public function getDelete($id) {
         $admin = $this->admin->find($id);
         $admin->delete();
-        
+
         $status = "Administrator " . $admin['name'] . " deleted successfully!";
         $this->request->session()->flash('status', $status);
-        
+
         return redirect('admin/administrators');
     }
+
 }
