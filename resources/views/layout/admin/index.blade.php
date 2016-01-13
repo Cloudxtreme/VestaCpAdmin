@@ -6,6 +6,8 @@
         <meta name="description" content="Crud Laravel 5.1">
         <meta name="author" content="Hélio Correia">
         <link rel="stylesheet" href="/asset/css/bootstrap.min.css" >
+        
+        <link rel="stylesheet" href="/asset/css/flat-ui.css" >
         <link rel="stylesheet" href="/asset/css/sb-admin.css" >
         <link href="/asset/css/font-awesome.css" rel="stylesheet" type="text/css">
     </head>

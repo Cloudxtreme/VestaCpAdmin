@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Foundation\Auth\User;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Reseller extends User
+class Reseller extends Authenticatable
 {
     protected $guarded = ['id'];
     

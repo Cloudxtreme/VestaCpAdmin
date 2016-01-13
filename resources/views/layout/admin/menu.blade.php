@@ -36,16 +36,19 @@
                 <a href="{{ URL::to('admin') }}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
-                <a href="{{ URL::to('users') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Usuários</a>
+                <a href="{{ URL::to('admin/users') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Users</a>
             </li>
             <li>
                 <a href="{{ URL::to('admin/resellers') }}"><i class="fa fa-fw fa-table"></i> Resellers</a>
             </li>
             <li>
+                <a href="{{ URL::to('admin/administrators') }}"><i class="fa fa-fw fa-desktop"></i> Administrators</a>
+            </li>
+            <li>
                 <a href="{{ URL::to('admin/servers') }}"><i class="fa fa-fw fa-edit"></i> Servers</a>
             </li>
             <li>
-                <a href="{{ URL::to('admin/administrators') }}"><i class="fa fa-fw fa-desktop"></i> Administrator</a>
+                <a href="{{ URL::to('admin/packages') }}"><i class="fa fa-fw fa-desktop"></i> Packages</a>
             </li>
             <li>
                 <a href="{{ URL::to('admin/sair') }}"><i class="fa fa-fw fa-wrench"></i> Sair</a>

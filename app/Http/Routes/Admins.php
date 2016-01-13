@@ -6,9 +6,10 @@ $router->group(['middleware' => ['auth:web_admins']], function ($router) {
         'as' => 'admin.index',
     ]);
     
+    Route::controller('administrators', 'AdminsController');
     Route::controller('servers', 'ServerController');
     Route::controller('resellers', 'ResellerController');
-    Route::controller('administrators', 'AdminsController');
+    Route::controller('users', 'UserController');
     
 });
 

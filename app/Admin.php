@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Foundation\Auth\User;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Admin extends User
+class Admin extends Authenticatable
 {
     protected $guarded = ['id'];
     
