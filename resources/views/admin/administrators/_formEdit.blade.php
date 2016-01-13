@@ -26,12 +26,6 @@
     </div>
 </div>
 
-<div class="form-group">
-    {!! Form::label('password', 'Password', array('class' => 'col-lg-2 control-label')); !!}
-    <div class="col-lg-10">
-        {!! Form::text('password', null, ['class' => 'form-control', 'placeholder' => 'Password']) !!}
-    </div>
-</div>
 
 
 

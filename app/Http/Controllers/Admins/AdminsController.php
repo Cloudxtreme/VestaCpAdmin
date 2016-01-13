@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Admin;
 use App\Server;
 
+
 class AdminsController extends Controller {
 
     public function home() {
@@ -38,7 +39,18 @@ class AdminsController extends Controller {
     }
 
     public function postCreate(Request $request) {
-        $data = $request->all();
+        /*
+         * take form data
+         */        
+        $data = new Admin;
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->id_server = $request->input('id_server');
+        $data->password = bcrypt($request->input('password'));
+        
+        /*
+         * makes data validation
+         */ 
 
         $this->validate($request, [
             'name' => 'required',
@@ -47,7 +59,11 @@ class AdminsController extends Controller {
             'password' => 'required',
         ]);
 
-        $this->admin->create($data)->save();
+        $data->save();
+        
+        /*
+         * shows response was successfully
+         */ 
 
         $status = "Administrator " . $data['name'] . " registered successfully!";
         $this->request->session()->flash('status', $status);
@@ -62,13 +78,12 @@ class AdminsController extends Controller {
     }
 
     public function postEdit(Request $request, $id) {
-        $data = $request->except('_token');
+        $data = $request->except('_token','password');
         
         $this->validate($request, [
             'name' => 'required',
             'email' => "required|unique:admins,email,$id",
             'id_server' => 'required',
-            'password' => 'required',
         ]);
         
         $this->admin->where('id', $id)->update($data);
