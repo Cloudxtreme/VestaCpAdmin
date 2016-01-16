@@ -20,7 +20,7 @@ class ResellerController extends Controller {
 
     public function getIndex() {
         $resellers = $this->reseller->paginate(10);
-
+        
         $status = "";
         if ($this->request->session()->has('status')) {
             $status = $this->request->session()->get('status');
@@ -35,16 +35,28 @@ class ResellerController extends Controller {
     }
 
     public function postCreate(Request $request) {
-        $data = $request->all();
+        
+        $data = new Reseller;
+        $data->company = $request->input('company');
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->domains = $request->input('domains');
+        $data->key = $request->input('key');
+        $data->status = $request->input('status');
+        $data->password = bcrypt($request->input('password'));
+        
+        
+        $this->validate($request, [
+            'company' => 'required',
+            'name' => 'required',
+            'email' => 'required|unique:admins',
+            'domains' => 'required',
+            'key' => 'required',
+            'status' => 'required',
+            'password' => 'required',
+        ]);
 
-        $validator = $this->validator->make($data, Reseller::$rules);
-        if ($validator->fails()) {
-            return redirect('admin/resellers/create')
-                            ->withErrors($validator)
-                            ->withInput();
-        }
-
-        Reseller::create($data)->save();
+        $data->save();
 
         $status = "Reseller " . $data['name'] . " registered successfully!";
         $this->request->session()->flash('status', $status);

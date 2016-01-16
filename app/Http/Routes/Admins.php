@@ -10,6 +10,7 @@ $router->group(['middleware' => ['auth:web_admins']], function ($router) {
     Route::controller('servers', 'ServerController');
     Route::controller('resellers', 'ResellerController');
     Route::controller('users', 'UserController');
+    Route::controller('packages', 'PackageController');
     
 });
 

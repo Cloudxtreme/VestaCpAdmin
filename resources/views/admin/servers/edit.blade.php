@@ -35,7 +35,7 @@
     <div class="form-group">
       <label  class="col-lg-2 control-label"></label>
       <div class="col-lg-10">
-          <a href="/servers" class="btn btn-default">Go Back</a>
+          <a href="/admin/servers" class="btn btn-default">Go Back</a>
         {!! Form::submit('Update', ['class'=>'btn btn-primary']); !!}
       </div>
     </div>

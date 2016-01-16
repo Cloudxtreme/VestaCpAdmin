@@ -1,6 +1,6 @@
-@extends('layout.admin.index')
+@extends('layout.user.index')
 
-@section('title', 'Página do vendedor')
+@section('title', 'Página do user')
 
 
 @section('content')
@@ -13,5 +13,5 @@
 </ol>
 
 
-Você está autenticado como vendedor.
+Você está autenticado como user.
 @endsection

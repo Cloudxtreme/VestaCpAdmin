@@ -7,7 +7,7 @@
     @yield('title')
 </h1>
 <ol class="breadcrumb">
-    <li><i class="fa fa-dashboard"></i>  <a href="{{ URL::to('/admin') }}">Dashboard</a></li>
+    <li><i class="fa fa-dashboard"></i>  <a href="{{ URL::to('/admin') }}">Dashboard </a></li>
     <li class="active"><i class="fa fa-file"></i> @yield('title')</li>
 </ol>
 
@@ -42,10 +42,10 @@
                 <td>{{$admin->email}}</td>
                 <td>{{$admin->created_at}}</td>
                 <td align="center">
-                    <a href="administrators/edit/{{$admin->id}}" class="btn btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                    <a href="administrators/edit/{{$admin->id}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o"></i> Edit</a>
                 </td>
                 <td align="center">
-                    <a href="administrators/delete/{{$admin->id}}" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                    <a href="administrators/delete/{{$admin->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
                 </td>
             </tr>
             @empty

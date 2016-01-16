@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">VestaCP Admin Multi</a>
+        <a class="navbar-brand" href="index.html">VestaCP Admin</a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
@@ -39,10 +39,10 @@
                 <a href="{{ URL::to('reseller/users') }}"><i class="fa fa-fw fa-bar-chart-o"></i> Users</a>
             </li>
             <li>
-                <a href="{{ URL::to('config') }}"><i class="fa fa-fw fa-desktop"></i> Configurações</a>
+                <a href="{{ URL::to('reseller/config') }}"><i class="fa fa-fw fa-desktop"></i> Configurações</a>
             </li>
             <li>
-                <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Sair</a>
+                <a href="{{ URL::to('reseller/sair') }}"><i class="fa fa-fw fa-wrench"></i> Logout</a>
             </li>
         </ul>
     </div>

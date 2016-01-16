@@ -21,12 +21,12 @@
 </div>
 @endif
 
-{!!Form::open (array('url'=>'/admin/users/create', 'class' => 'form-horizontal'))!!}
+{!!Form::open( ['url' => "admin/users/edit/$user->id", 'class' => 'form-horizontal'] )!!}
 
 <fieldset>
-    <legend>Add new user</legend>
-
-    @include('admin.users._form')
+    <legend>Edit user</legend>
+{!! Form::model($user)!!}
+    @include('admin.users._formEdit')
 
     <hr>  
     <div class="form-group">
@@ -39,12 +39,10 @@
 
 </fieldset>
 
-
-
-
-
 {!!Form::close()!!}
+
 @endsection
+
 
 
 

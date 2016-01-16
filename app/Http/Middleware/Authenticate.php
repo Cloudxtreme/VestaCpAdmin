@@ -33,7 +33,7 @@ class Authenticate
                         break;
                     
                     default:
-                        $path = 'user/entrar';
+                        $path = 'entrar';
                         break;
                 }
 

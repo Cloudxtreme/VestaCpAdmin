@@ -37,6 +37,7 @@
             <th>Domain</th>
             <th>Server</th>
             <th>Package</th>
+            <th>Reseller</th>
             <th>Created At</th>
             <th colspan="2" align="center">Actions</th>
         </tr>
@@ -45,18 +46,19 @@
             <tr>
                 <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
-                <td>{{$user->lastname}}</td>
+                <td>{{$user->lasname}}</td>
                 <td>{{$user->email}}</td>
                 <td>{{$user->username}}</td>
                 <td>{{$user->domain}}</td>
-                <td>{{$user->server}}</td>
+                <td>{{$user->hostname}}</td>
                 <td>{{$user->package}}</td>
+                <td>{{$user->id_reseller}}</td>
                 <td>{{$user->created_at}}</td>
                 <td align="center">
-                    <a href="administrators/edit/{{$user->id}}" class="btn btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                    <a href="users/edit/{{$user->id}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o"></i> Edit</a>
                 </td>
                 <td align="center">
-                    <a href="administrators/delete/{{$user->id}}" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                    <a href="users/delete/{{$user->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
                 </td>
             </tr>
             @empty

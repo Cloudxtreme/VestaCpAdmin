@@ -11,7 +11,8 @@ class AuthController extends Controller
     
     protected $guard = 'web_admins';
     protected $redirectTo = 'admin';
-
+    
+    
     public function index()
     {
         return view('admin.auth');

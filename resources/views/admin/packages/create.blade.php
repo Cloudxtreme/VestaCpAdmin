@@ -1,6 +1,6 @@
 @extends('layout.admin.index')
 
-@section('title', 'Users')
+@section('title', 'Packages')
 
 @section('content')
 <h1 class="page-header">
@@ -21,18 +21,18 @@
 </div>
 @endif
 
-{!!Form::open (array('url'=>'/admin/users/create', 'class' => 'form-horizontal'))!!}
+{!!Form::open (array('url'=>'/admin/packages/create', 'class' => 'form-horizontal'))!!}
 
 <fieldset>
-    <legend>Add new user</legend>
+    <legend>Add new package</legend>
 
-    @include('admin.users._form')
-
-    <hr>  
+    @include('admin.packages._form')
+        
+    <hr>    
     <div class="form-group">
         <label  class="col-lg-2 control-label"></label>
         <div class="col-lg-10">
-            <a href="/admin/users" class="btn btn-default">Go Back</a>
+            <a href="/admin/packages" class="btn btn-default">Go Back</a>
             {!! Form::submit('Submit', ['class'=>'btn btn-primary']); !!}
         </div>
     </div>
@@ -45,7 +45,6 @@
 
 {!!Form::close()!!}
 @endsection
-
 
 
 

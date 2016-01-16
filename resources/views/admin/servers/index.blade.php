@@ -46,10 +46,10 @@
                 <td>{{$server->nsslave}}</td>
                 <td>{{$server->created_at}}</td>
                 <td align="center">
-                    <a href="servers/edit/{{$server->id}}" class="btn btn-warning"><i class="fa fa-pencil-square-o"></i> Edit</a>
+                    <a href="servers/edit/{{$server->id}}" class="btn btn-warning btn-sm"><i class="fa fa-pencil-square-o"></i> Edit</a>
                 </td>
                 <td align="center">
-                    <a href="servers/delete/{{$server->id}}" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                    <a href="servers/delete/{{$server->id}}" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</a>
                 </td>
             </tr>
             @empty

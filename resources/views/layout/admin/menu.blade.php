@@ -1,34 +1,37 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-5">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">VestaCP Admin</a>
-    </div>
-    <!-- Top Menu Items -->
-    <ul class="nav navbar-right top-nav">
-        
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-user"></i> Perfil</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-gear"></i> Configurações</a>
-                </li>
+          </button>
+          <a class="navbar-brand" href="#">VestaCP Admin</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-5">
+          <ul class="nav navbar-nav">
+            
+           </ul>
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MonsterCritic <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
                 <li class="divider"></li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Sair</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><span class="visible-sm visible-xs">Settings<span class="fui-gear"></span></span><span class="visible-md visible-lg"><span class="fui-gear"></span></span></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    
     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
@@ -51,7 +54,7 @@
                 <a href="{{ URL::to('admin/packages') }}"><i class="fa fa-fw fa-desktop"></i> Packages</a>
             </li>
             <li>
-                <a href="{{ URL::to('admin/sair') }}"><i class="fa fa-fw fa-wrench"></i> Sair</a>
+                <a href="{{ URL::to('admin/sair') }}"><i class="fa fa-fw fa-wrench"></i> Logout</a>
             </li>
         </ul>
     </div>
