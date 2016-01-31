@@ -19,6 +19,7 @@ class AdminsController extends Controller {
     public function __construct(Admin $admin, Request $request) {
         $this->admin = $admin;
         $this->request = $request;
+        $this->middleware('auth');
     }
   
 
